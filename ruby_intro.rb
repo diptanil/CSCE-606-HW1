@@ -81,13 +81,21 @@ end
 # Part 3
 
 class BookInStock
-  attr_reader :isbn, :price
+  
  def initialize(isbn,price)
    raise ArgumentError.new("Not valid isbn") if isbn.length == 0
    raise ArgumentError.new("Not valid price") if price <= 0
    @isbn = isbn
    @price = price
  end
+ 
+ def isbn
+   @isbn
+ end
+ def price
+   @price
+ end
+ 
  def isbn=(i)
    @isbn = i
  end
